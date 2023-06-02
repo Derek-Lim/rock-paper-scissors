@@ -19,7 +19,12 @@ console.log(getComputerChoice());
 //getPlayerChoice() will ask user and save the response
 function getPlayerChoice() {
     playerSelection = prompt("Rock, scissors, or paper?");
+    //make playerSelection case-insensitive
+    playerSelection = playerSelection.toLowerCase();
+    //make sure player only selects rock, paper, or scissors
+    while (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
+        playerSelection = prompt(`"${playerSelection}" is not valid. Please pick again.`);
+    }
     return playerSelection;
 }
-
 console.log(getPlayerChoice());

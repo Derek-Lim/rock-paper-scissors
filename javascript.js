@@ -97,6 +97,22 @@ function game() {
     getPlayerChoice();
     playRound(playerSelection, computerSelection);
     console.log(`Round 5\nComputer: ${computerPoints}\nYou: ${playerPoints}`);
+    
+    announceWinner();
+}
+
+//create function announceWinner()
+//announceWinner will announce winner
+function announceWinner() {
+    if (computerPoints > playerPoints) {
+        alert(`You lose!\nComputer: ${computerPoints}\nYou: ${playerPoints}`);
+    } else if (playerPoints > computerPoints) {
+        alert(`You win!\nComputer: ${computerPoints}\nYou: ${playerPoints}`);
+    } else if (playerPoints === computerPoints) {
+        alert(`Tie!\nComputer: ${computerPoints}\nYou: ${playerPoints}`);
+    } else {
+        alert(`error\nComputer: ${computerPoints}\nYou: ${playerPoints}`);
+    }
 }
 
 //play

@@ -22,15 +22,21 @@ playBox.appendChild(playButton3);
 
 //add event listeners
 playButton1.addEventListener('click', () => {
-    alert('rock');
+    let playerSelection = "rock";
+    getComputerChoice();
+    playRound(playerSelection, computerSelection);
 })
 
 playButton2.addEventListener('click', () => {
-    alert('paper');
+    let playerSelection = "paper";
+    getComputerChoice();
+    playRound(playerSelection, computerSelection);
 })
 
 playButton3.addEventListener('click', () => {
-    alert('scissors');
+    let playerSelection = "scissors";
+    getComputerChoice();
+    playRound(playerSelection, computerSelection);
 })
 
 //create function getComputerChoice()
@@ -49,20 +55,20 @@ function getComputerChoice() {
     return computerSelection;
 }
 
-//create function getPlayerChoice()
-//getPlayerChoice() will ask user and save the response
-function getPlayerChoice() {
-    playerSelection = prompt("Rock, scissors, or paper?");
-    //make playerSelection case-insensitive
-    playerSelection = playerSelection.toLowerCase();
-    //make sure player only selects rock, paper, or scissors
-    while (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
-        playerSelection = prompt(`"${playerSelection}" is not valid. Please pick again.`);
-        //make playerSelection case-insensitive
-        playerSelection = playerSelection.toLowerCase();
-    }
-    return playerSelection;
-}
+// //create function getPlayerChoice()
+// //getPlayerChoice() will ask user and save the response
+// function getPlayerChoice() {
+//     playerSelection = prompt("Rock, scissors, or paper?");
+//     //make playerSelection case-insensitive
+//     playerSelection = playerSelection.toLowerCase();
+//     //make sure player only selects rock, paper, or scissors
+//     while (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
+//         playerSelection = prompt(`"${playerSelection}" is not valid. Please pick again.`);
+//         //make playerSelection case-insensitive
+//         playerSelection = playerSelection.toLowerCase();
+//     }
+//     return playerSelection;
+// }
 
 //create function playRound()
 //playRound() will take parameters playerSelection and computerSelection and determine who wins

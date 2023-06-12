@@ -1,3 +1,38 @@
+//create container for playButtons
+const body = document.body
+const playBox = document.createElement('div');
+body.append(playBox);
+playBox.setAttribute('style', 'display: flex; justify-content: space-around; align-items: center; height: 500px;');
+
+//create three buttons - one for each selection
+const playButton1 = document.createElement('button');
+playButton1.textContent = "Rock";
+playButton1.setAttribute('style', 'height: 300px; width: 300px; font-size: 75px;')
+playBox.appendChild(playButton1);
+
+const playButton2 = document.createElement('button');
+playButton2.textContent = "Paper";
+playButton2.setAttribute('style', 'height: 300px; width: 300px; font-size: 75px;')
+playBox.appendChild(playButton2);
+
+const playButton3 = document.createElement('button');
+playButton3.textContent = "Scissors";
+playButton3.setAttribute('style', 'height: 300px; width: 300px; font-size: 75px;')
+playBox.appendChild(playButton3);
+
+//add event listeners
+playButton1.addEventListener('click', () => {
+    alert('rock');
+})
+
+playButton2.addEventListener('click', () => {
+    alert('paper');
+})
+
+playButton3.addEventListener('click', () => {
+    alert('scissors');
+})
+
 //create function getComputerChoice()
 //getComputerChoice() will randomly select rock, scissors, or paper
 function getComputerChoice() {
@@ -97,7 +132,7 @@ function game() {
     getPlayerChoice();
     playRound(playerSelection, computerSelection);
     console.log(`Round 5\nComputer: ${computerPoints}\nYou: ${playerPoints}`);
-    
+
     announceWinner();
 }
 
@@ -105,7 +140,7 @@ function game() {
 //announceWinner will announce winner
 function announceWinner() {
     if (computerPoints > playerPoints) {
-        alert(`You lose!\nComputer: ${computerPoints}\nYou: ${playerPoints}`);
+        alert(`Computer Wins!\nComputer: ${computerPoints}\nYou: ${playerPoints}`);
     } else if (playerPoints > computerPoints) {
         alert(`You win!\nComputer: ${computerPoints}\nYou: ${playerPoints}`);
     } else if (playerPoints === computerPoints) {
@@ -116,4 +151,5 @@ function announceWinner() {
 }
 
 //play
-game();
+// game();
+
